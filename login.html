@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - yourPrompty</title>
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body class="login-bg">
+
+  <div class="login-card animate-fade-in-up">
+    <!-- Header with animated gradient -->
+    <div class="login-header bg-gradient-blue" id="login-header">
+      <div style="display: flex; justify-content: center; align-items: center; margin: 0 auto 0.75rem; width: 3rem; height: 3rem; border-radius: 50%; background: rgba(255, 255, 255, 0.2); animation: float 3s ease-in-out infinite;">
+        <!-- Sparkles Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"></path><path d="m5 3 1 2.5L8.5 6 6 7 5 9.5 4 7 1.5 6 4 5Z"></path><path d="m19 17 1 2.5 2.5.5-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1Z"></path></svg>
+      </div>
+      <h2 id="card-title" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.25rem;">Welcome Back!</h2>
+      <p id="card-desc" style="font-size: 0.875rem; opacity: 0.9;">Sign in to continue your journey</p>
+    </div>
+
+    <!-- Body -->
+    <div class="login-body">
+      <form id="auth-form" class="flex flex-col">
+        <!-- Name (Sign up only, hidden by default) -->
+        <div class="form-group" id="name-group" style="display: none;">
+          <label class="form-label" for="full-name">Full Name</label>
+          <div class="input-container">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <input class="form-input" type="text" id="full-name" placeholder="Enter your full name">
+          </div>
+        </div>
+
+        <!-- Username (Sign up only, hidden by default) -->
+        <div class="form-group" id="username-group" style="display: none;">
+          <label class="form-label" for="username">Username</label>
+          <div class="input-container">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"></path></svg>
+            <input class="form-input" type="text" id="username" placeholder="Choose a username">
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group" id="email-group">
+          <label class="form-label" for="email">Email Address</label>
+          <div class="input-container">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            <input class="form-input" type="email" id="email" placeholder="your@email.com" required>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group" id="password-group">
+          <label class="form-label" for="password">Password</label>
+          <div class="input-container">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <input class="form-input" type="password" id="password" placeholder="Enter your password" required>
+            <button class="password-toggle" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Confirm Password (Sign up only, hidden by default) -->
+        <div class="form-group" id="confirm-group" style="display: none;">
+          <label class="form-label" for="confirm-password">Confirm Password</label>
+          <div class="input-container">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <input class="form-input" type="password" id="confirm-password" placeholder="Confirm your password">
+          </div>
+        </div>
+
+        <!-- Error Message placeholder -->
+        <div id="error-message" style="display: none; padding: 0.5rem; margin-bottom: 1rem; border-radius: 0.5rem; background-color: #fee2e2; color: #ef4444; font-size: 0.75rem; border: 1px solid #fca5a5;"></div>
+
+        <!-- Submit Button -->
+        <button class="btn-primary bg-gradient-blue" type="submit" id="submit-btn" style="margin-top: 0.5rem;">
+          <span id="submit-btn-text">Sign In</span>
+        </button>
+      </form>
+
+      <!-- Toggle Mode link -->
+      <div style="text-align: center; margin-top: 1.5rem;">
+        <p style="font-size: 0.875rem; color: #6b7280;">
+          <span id="toggle-label">Don't have an account?</span>
+          <a href="#" id="toggle-link" style="color: var(--primary-purple); font-weight: 600; text-decoration: none; margin-left: 0.25rem;">Sign Up</a>
+        </p>
+      </div>
+      
+      <!-- Demo account prompt -->
+      <div style="margin-top: 2rem; padding: 0.75rem; border-radius: 0.75rem; background-color: #f3f4f6; text-align: center; border: 1px dashed #d1d5db;">
+        <p style="font-size: 0.75rem; color: #4b5563; line-height: 1.4;">
+          <strong>Demo credentials:</strong><br>
+          Email: <span style="font-family: monospace; font-weight: 600;">admin@yourprompty.com</span><br>
+          Password: <span style="font-family: monospace; font-weight: 600;">password</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js?v=3"></script>
+</body>
+</html>
